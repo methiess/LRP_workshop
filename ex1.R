@@ -2,7 +2,7 @@ rm(list=ls())
 library(ggplot2)
 L <- read.csv("ex1_data/landings.csv")
 D <- read.csv("ex1_data/ex1.csv")
-D$CPUE <- (D$PS_Catch/1000)/D$Effort
+D$CPUE <- (D$PS_Catch/1000)/D$PS_Effort
 
 head(L)
 head(D)
@@ -21,7 +21,7 @@ ggplot(D,aes(y=PS_Catch/1000,x=Year)) + geom_path() +
   theme_classic() + labs(x='Year', y="Purse Seine Landings (t)") + expand_limits(y=0)
 
 #SWNS/BoF PS Effort
-ggplot(D,aes(y=Effort,x=Year)) + geom_path() +
+ggplot(D,aes(y=PS_Effort,x=Year)) + geom_path() +
   theme_classic() + labs(x='Year', y="Purse Seine Effort (trips)") + expand_limits(y=0)
 
 #SWNS/BoF PS CPUE
