@@ -1,7 +1,7 @@
 rm(list=ls())
 library(ggplot2)
-L <- read.csv("/ex1_data/landings.csv")
-D <- read.csv("/ex1_data/ex1.csv")
+L <- read.csv("ex1_data/landings.csv")
+D <- read.csv("ex1_data/ex1.csv")
 D$CPUE <- (D$PS_Catch/1000)/D$Effort
 
 head(L)
